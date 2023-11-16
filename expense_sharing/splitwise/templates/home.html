@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+</head>
+<body>
+    <h2>User Details</h2>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Mobile Number</th>
+                <th>Expense Shared Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users%}
+            <tr>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.mobile_number }}</td>
+                <td>{{ user.expense_share_amount }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+    <a href="{% url 'create_expense' %}">Create Expense</a>
+
+</body>
+</html>
